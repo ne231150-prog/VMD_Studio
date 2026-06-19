@@ -1,121 +1,105 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import './index.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [showPassword, setShowPassword] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
+  const [isDark, setIsDark] = useState(false)
+
+  const handleLogin = () => {
+    setIsLoading(true)
+    setTimeout(() => setIsLoading(false), 1200)
+  }
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <main className={isDark ? 'app dark' : 'app'}>
+      <section className="authShell">
+        <div className="visualPanel">
+          <div className="topBar">
+            <div className="brandMark">
+              <span>VMD</span>
+              <span>Studio</span>
+            </div>
+            <button className="modeButton" onClick={() => setIsDark(!isDark)}>
+              {isDark ? 'Light' : 'Dark'}
+            </button>
+          </div>
 
-      <div className="ticks"></div>
+          <div className="studioGraphic">
+            <div className="floor" />
+            <div className="rack rackOne" />
+            <div className="rack rackTwo" />
+            <div className="tableObject" />
+            <div className="mannequinObject" />
+            <div className="lightBeam lightOne" />
+            <div className="lightBeam lightTwo" />
+          </div>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
+          <div className="visualText">
+            <p className="eyebrow">Virtual Merchandising Design</p>
+            <h1>Design retail before reality.</h1>
+            <p>
+              店舗VMDを、実店舗で動かす前にバーチャル空間で設計・確認・共有する。
+            </p>
+          </div>
         </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
+
+        <div className="loginPanel">
+          <div className="languageSwitch">
+            <button className="active">日本語</button>
+            <button>English</button>
+          </div>
+
+          <div className="cardHeader">
+            <p className="smallLabel">Sign in</p>
+            <h2>店舗アカウントでログイン</h2>
+            <p>VMD Studioへようこそ。</p>
+          </div>
+
+          <form className="loginForm">
+            <label>
+              メールアドレス
+              <input type="email" placeholder="store@example.com" />
+            </label>
+
+            <label>
+              パスワード
+              <div className="passwordField">
+                <input
+                  type={showPassword ? 'text' : 'password'}
+                  placeholder="••••••••"
+                />
+                <button type="button" onClick={() => setShowPassword(!showPassword)}>
+                  {showPassword ? 'Hide' : 'Show'}
+                </button>
+              </div>
+            </label>
+
+            <div className="formOptions">
+              <label className="checkLabel">
+                <input type="checkbox" />
+                ログイン状態を保持
+              </label>
+              <button type="button">パスワードを忘れた方</button>
+            </div>
+
+            <button
+              type="button"
+              className="primaryButton"
+              onClick={handleLogin}
+              disabled={isLoading}
+            >
+              {isLoading ? 'Signing in...' : 'ログイン'}
+            </button>
+          </form>
+
+          <div className="subActions">
+            <span>初めて利用する店舗ですか？</span>
+            <button type="button">新規登録</button>
+          </div>
         </div>
       </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+    </main>
   )
 }
 
