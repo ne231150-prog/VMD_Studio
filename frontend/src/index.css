@@ -445,3 +445,263 @@ button {
     padding: 32px;
   }
 }
+
+.singleCardShell {
+  width: min(920px, 100%);
+}
+
+.wideCard {
+  border-radius: 38px;
+  padding: 48px;
+  background: rgba(250, 250, 249, 0.86);
+  border: 1px solid rgba(255,255,255,0.46);
+  box-shadow: 0 32px 90px rgba(24, 24, 22, 0.16);
+  backdrop-filter: blur(28px);
+}
+
+.dark .wideCard {
+  background: rgba(31,31,31,0.82);
+  color: #f4f4f1;
+  border-color: rgba(255,255,255,0.08);
+}
+
+.backButton {
+  border: 0;
+  background: transparent;
+  color: #777;
+  cursor: pointer;
+  margin-bottom: 34px;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.formGrid label {
+  display: grid;
+  gap: 9px;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.formGrid input,
+.formGrid select {
+  width: 100%;
+  height: 58px;
+  border: 1px solid #d8d8d5;
+  border-radius: 18px;
+  padding: 0 17px;
+  color: inherit;
+  background: rgba(255,255,255,0.76);
+  outline: none;
+}
+
+.dark .formGrid input,
+.dark .formGrid select {
+  border-color: rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.06);
+}
+
+.wideButton {
+  width: 100%;
+  margin-top: 28px;
+}
+
+.workspaceShell {
+  width: min(1320px, 100%);
+  min-height: 760px;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 24px;
+}
+
+.sidebar,
+.workspace {
+  border-radius: 34px;
+  background: rgba(250,250,249,0.84);
+  border: 1px solid rgba(255,255,255,0.48);
+  box-shadow: 0 30px 80px rgba(24,24,22,0.13);
+  backdrop-filter: blur(28px);
+}
+
+.dark .sidebar,
+.dark .workspace {
+  background: rgba(31,31,31,0.82);
+  color: #f4f4f1;
+  border-color: rgba(255,255,255,0.08);
+}
+
+.sidebar {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sideLogo {
+  display: grid;
+  gap: 0;
+  letter-spacing: -0.06em;
+  line-height: 0.88;
+  margin-bottom: 46px;
+}
+
+.sideLogo span:first-child {
+  font-size: 30px;
+  font-weight: 850;
+}
+
+.sideLogo span:last-child {
+  font-size: 22px;
+  font-weight: 650;
+  color: #777;
+}
+
+.sidebar nav {
+  display: grid;
+  gap: 8px;
+}
+
+.sidebar nav button,
+.logoutButton {
+  height: 46px;
+  border: 0;
+  border-radius: 15px;
+  padding: 0 14px;
+  text-align: left;
+  background: transparent;
+  color: #777;
+  cursor: pointer;
+}
+
+.sidebar nav button.active {
+  background: #1f1f1f;
+  color: #f8f8f6;
+}
+
+.dark .sidebar nav button.active {
+  background: #f4f4f1;
+  color: #1f1f1f;
+}
+
+.logoutButton {
+  margin-top: auto;
+}
+
+.workspace {
+  padding: 38px;
+}
+
+.workspaceHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 28px;
+  margin-bottom: 42px;
+}
+
+.workspaceHeader h2 {
+  margin: 10px 0 10px;
+  font-size: 38px;
+  letter-spacing: -0.055em;
+}
+
+.workspaceHeader p:last-child {
+  max-width: 640px;
+  color: #777;
+  margin: 0;
+  line-height: 1.8;
+}
+
+.compactButton {
+  width: auto;
+  padding: 0 22px;
+  white-space: nowrap;
+}
+
+.emptyState {
+  min-height: 460px;
+  border: 1px dashed #cacaca;
+  border-radius: 28px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 48px;
+}
+
+.emptyIcon {
+  width: 74px;
+  height: 74px;
+  border-radius: 24px;
+  display: grid;
+  place-items: center;
+  background: rgba(31,31,31,0.06);
+  margin-bottom: 18px;
+  font-size: 30px;
+}
+
+.emptyState h3 {
+  margin: 0 0 10px;
+  font-size: 26px;
+  letter-spacing: -0.04em;
+}
+
+.emptyState p {
+  max-width: 520px;
+  color: #777;
+  line-height: 1.8;
+  margin: 0 0 24px;
+}
+
+.projectFormCard {
+  max-width: 920px;
+  border-radius: 30px;
+  padding: 34px;
+  background: rgba(255,255,255,0.54);
+  border: 1px solid rgba(31,31,31,0.06);
+}
+
+.dark .projectFormCard {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.08);
+}
+
+.uploadArea {
+  margin-top: 24px;
+  border-radius: 26px;
+  padding: 30px;
+  border: 1px dashed #c7c7c4;
+  background: rgba(255,255,255,0.36);
+}
+
+.uploadArea h3 {
+  margin: 10px 0;
+  font-size: 24px;
+  letter-spacing: -0.04em;
+}
+
+.uploadArea p:last-of-type {
+  color: #777;
+  line-height: 1.7;
+}
+
+.secondaryButton {
+  height: 48px;
+  padding: 0 18px;
+  border-radius: 15px;
+  border: 1px solid #d8d8d5;
+  background: rgba(255,255,255,0.6);
+  cursor: pointer;
+}
+
+@media (max-width: 920px) {
+  .formGrid,
+  .workspaceShell {
+    grid-template-columns: 1fr;
+  }
+
+  .workspaceHeader {
+    flex-direction: column;
+  }
+}
